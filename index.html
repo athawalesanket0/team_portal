@@ -1,324 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - Gesture Nexus</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f3f4f6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            color: #111827;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .team-member {
-            background: white;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-image {
-            width: 128px;
-            height: 128px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            overflow: hidden;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .member-name {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #111827;
-            margin-bottom: 0.5rem;
-        }
-
-        .member-role {
-            color: #4b5563;
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-        }
-
-        .member-description {
-            color: #6b7280;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-icon:hover {
-            opacity: 0.7;
-        }
-
-        .facebook { color: #1877f2; }
-        .instagram { color: #e4405f; }
-        .linkedin { color: #0077b5; }
-        .twitter { color: #1da1f2; }
-
-        @media (min-width: 768px) {
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .team-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
+    <title>Domains</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <header class="header">
-            <h1>OUR TEAM</h1>
+            <h1>OUR DOMAINS</h1>
         </header>
         <div class="team-grid" id="teamGrid"></div>
     </div>
 
     <script>
-        const teamMembers = [
+        const domains = [
             {
-                name: 'ECHO',
-                role: 'Web Development',
+                name: 'Web Development',
+                role: 'Creating innovative digital solutions',
                 image: 'images/tech2.png',
                 description: 'Our Web Development Team crafts innovative, user-friendly, and responsive websites that bring ideas to life.',
-                pageLink: 'team.html'  // Link to the team member's page
+                linkParam: 'webdev'
             },
             {
-                name: 'Picasso',
-                role: 'Graphic Designer',
+                name: 'Graphic Design',
+                role: 'Creative Design Solutions',
                 image: 'images/gd1.png',
-                description: 'Our Graphic Design Team transforms ideas into captivating visuals, blending creativity and strategy to make your brand unforgettable.',
-                pageLink: 'team-picasso.html'  // Link to the team member's page
+                description: 'Our Graphic Design Team transforms ideas into captivating visuals, blending creativity and strategy.',
+                linkParam: 'design'
             },
             {
-                name: 'Pinnacle',
-                role: 'Human Resources',
+                name: 'Human Resources',
+                role: 'People Management',
                 image: 'images/hr.png',
-                description: 'Our HR Team fosters a supportive and dynamic workplace, ensuring every individual thrives and grows with the organization.',
-                pageLink: 'team-pinnacle.html'  // Link to the team member's page
+                description: 'Our HR Team fosters a supportive and dynamic workplace, ensuring growth and development.',
+                linkParam: 'hr'
             },
             {
-                name: 'NexS',
-                role: 'Social Media Marketing',
+                name: 'Social Media Marketing',
+                role: 'Marketing',
                 image: 'images/sm.png',
                 description: 'Our Social Media Marketing Team builds impactful digital connections, driving engagement and growth through creative strategies.',
-                pageLink: 'team-NexS.html' // Link to the team member's page
-               
+                linkParam: 'social'
             },
             {
-                name: 'Spearhead1',
-                role: 'General Management/HR',
-                image: 'images/hr2.jpeg',
-                description: 'Our General Management Team ensures seamless operations and strategic leadership, driving success across all functions.',
-                pageLink: 'team-Spearhead.html' // Link to the team member's page
-            },
-           
-            {
-                name: 'Spearhead2',
-                role: 'General Management/HR',
-                image: 'images/hr1.jpeg',
-                description: 'Our General Management Team ensures seamless operations and strategic leadership, driving success across all functions.',
-                pageLink: 'team-Spearhead.html' // Link to the team member's page
-            },
-            {
-                name: 'Spearhead3',
-                role: 'General Management/HR',
+                name: 'General Management/HR',
+                role: 'Management',
                 image: 'images/hr3.png',
-                description: 'Our General Management Team ensures strategic direction, efficient operations, and continuous growth, driving the success of the organization.',
-                pageLink: 'team-Spearhead.html' // Link to the team member's page
+                description: 'Our General Management Team ensures seamless operations and strategic leadership, driving success across all functions.',
+                linkParam: 'general'
             },
             {
-                name: 'Spearhead4',
-                role: 'General Management/HR',
-                image: 'images/hr4.jpeg',
-                description: 'Our General Management Team leads with vision, optimizing processes and resources to achieve organizational excellence and growth.',
-                pageLink: 'team-Spearhead.html' // Link to the team member's page
-            },
-            {
-                name: 'Weeho',
-                role: 'Event Management System',
+                name: 'Event Management System',
+                role: 'Event',
                 image: 'images/event.png',
                 description: 'Our Event Management System turns ideas into reality, streamlining every detail for events that leave a lasting impression.',
-                pageLink: 'team-weeho.html' // Link to the team member's page
+                linkParam: 'event'
             },
             {
-                name: 'Young leaders-1',
-                role: 'Digital Marketing',
+                name: 'Digital Marketing',
+                role: 'Digital',
                 image: 'images/dg.png',
                 description: 'Our Digital Marketing Team amplifies your brand’s presence, driving growth through targeted strategies and innovative campaigns.',
-                pageLink: 'team-young.html' // Link to the team member's page
+                linkParam: 'digital'
             },
             {
-                name: 'Young leaders-2',
-                role: 'Digital Marketing',
-                image: 'images/dg1.png',
-                description: 'Our Digital Marketing Team leverages data-driven strategies and creative campaigns to boost brand visibility and drive online success.',
-                pageLink: 'team-young.html' // Link to the team member's page
-            },
-            {
-                name: 'Young leaders-3',
-                role: 'Digital Marketing',
-                image: 'images/dg2.jpeg',
-                description: 'Our Digital Marketing Team blends creativity and analytics to craft compelling campaigns that elevate your brand in the digital landscape.',
-                pageLink: 'team-young.html' // Link to the team member's page
-            },
-            {
-                name: 'Glowboll',
-                role: 'International Hr Team',
+                name: 'International Hr Team',
+                role: 'International',
                 image: 'images/hr1.png',
                 description: 'Our International HR Team connects diverse talent across borders, cultivating a global community of collaboration and growth.',
-                pageLink: 'team-glowboll.html' // Link to the team member's page
+                linkParam: 'international'
             },
             {
-                name: 'Inseeds',
-                role: 'Digital Marketing',
-                image: 'images/dg.png',
-                description: 'Our International HR Team connects diverse talent across borders, cultivating a global community of collaboration and growth.',
-                pageLink: 'team-glowboll.html' // Link to the team member's page
-            },
-            {
-                name: 'Maverick',
-                role: 'Volunteer',
-                image: 'images/vol1.png',
-                description: 'Our Volunteer Team drives change with passion and dedication, creating meaningful impact in communities worldwide.',
-                pageLink: 'team-glowboll.html' // Link to the team member's page
-            },
-            {
-                name: 'Spark',
+                name: 'Volunteer',
                 role: 'Volunteer',
                 image: 'images/vol.png',
-                description: 'Our Volunteer Team unites hearts and hands, empowering communities and creating lasting change across the globe.',
-                pageLink: 'team-pinnacle.html' // Link to the team member's page
+                description: 'Our Volunteer Team drives change with passion and dedication, creating meaningful impact in communities worldwide.',
+                linkParam: 'volunteer'
             },
-            {
-                name: 'Row',
-                role: 'Volunteer',
-                image: 'images/vol3.png',
-                description: 'Our Volunteer Team inspires action and transforms lives, building a better world through collective efforts.',
-                pageLink: 'team-pinnacle.html' // Link to the team member's page
-            },
-            {
-                name: 'Jupiter',
-                role: 'Volunteer',
-                image: 'images/vol5.png',
-                description: 'Our Volunteer Team channels compassion into action, making a tangible difference one step at a time.',
-                pageLink: 'team-pinnacle.html' // Link to the team member's page
-            },
-            {
-                name: 'Zenith',
-                role: 'Volunteer',
-                image: 'images/vol6.jpeg',
-                description: 'Our Volunteer Team ignites positive change, fostering hope and progress through selfless dedication.',
-                pageLink: 'team-pinnacle.html' // Link to the team member's page
-            },
-            {
-                name: 'Venus',
-                role: 'Volunteer',
-                image: 'images/vol7.png',
-                description: 'Our Volunteer Team creates a ripple of impact, turning passion into purpose and transforming communities.',
-                pageLink: 'team-pinnacle.html' // Link to the team member's page
-            },  
-            {
-                name: 'Pyramid',
-                role: 'Volunteer',
-                image: 'images/vol8.png',
-                description: 'Our Volunteer Team is the driving force behind meaningful change, making a global impact through compassion and commitment.',
-                pageLink: 'team-pinnacle.html' // Link to the team member's page
-            },  
-
-            // Add other team members similarly
+            // {
+            //     name: '',
+            //     role: '',
+            //     image: 'images/.png',
+            //     description: '',
+            //     linkParam: ''
+            // },
         ];
 
-        function createTeamMemberCard(member) {
+        function createDomainCard(domain) {
             return `
-                <div class="team-member">
-                    <a href="${member.pageLink}" style="text-decoration: none; color: inherit;">
-                        <div class="profile-image">
-                            <img src="${member.image}" alt="${member.name}">
-                        </div>
-                        <h3 class="member-name">${member.name}</h3>
-                        <p class="member-role">${member.role}</p>
-                        <p class="member-description">${member.description}</p>
-                        <div class="social-links">
-                            <a href="#" class="social-icon facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                            </a>
-                            <a href="#" class="social-icon instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                            </a>
-                            <a href="#" class="social-icon linkedin">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            </a>
-                            <a href="#" class="social-icon twitter">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                            </a>
-                        </div>
-                    </a>
+                <div class="team-member" onclick="window.location.href='teams.html?domain=${domain.linkParam}'">
+                    <div class="profile-image">
+                        <img src="${domain.image}" alt="${domain.name}">
+                    </div>
+                    <h3 class="member-name">${domain.name}</h3>
+                    <p class="member-role">${domain.role}</p>
+                    <p class="member-description">${domain.description}</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="social-icon instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-icon linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="#" class="social-icon twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                    </div>
                 </div>
             `;
         }
 
-        function renderTeamMembers() {
+        function renderDomains() {
             const teamGrid = document.getElementById('teamGrid');
-            teamGrid.innerHTML = teamMembers.map(member => createTeamMemberCard(member)).join('');
+            teamGrid.innerHTML = domains.map(domain => createDomainCard(domain)).join('');
         }
 
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', renderTeamMembers);
+        document.addEventListener('DOMContentLoaded', renderDomains);
     </script>
 </body>
+
 </html>
